@@ -17,20 +17,19 @@ jobs:
           repository: NEETweeb/testGaCypress10
           path: app
           
+      - name: Install app dependencies
+        uses: bahmutov/npm-install@v1
+        with:
+          working-directory: app 
+   
+ 
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
           start: yarn cy:allTests
           
-#      - name: Install app dependencies
-#        uses: bahmutov/npm-install@v1
-#        with:
-#          working-directory: app
 
-#      - name: Start the application
-#        run: |
-#          cd app
-#          npm run start &
+
 
 #      - name: Run tests 🧪
 #        # https://github.com/cypress-io/github-action
